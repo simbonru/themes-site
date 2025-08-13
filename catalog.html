@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Каталог тем</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="fractal"></canvas>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <h1 class="logo">Каталог тем</h1>
+      <button id="burger" aria-label="Открыть меню" class="burger" aria-expanded="false">☰</button>
+      <nav id="mainnav" class="mainnav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html" class="active">Каталог</a>
+        <a href="cs2-tournament.html">Турнир CS2</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <h2>Список тем — нажми на тему, чтобы открыть подтему</h2>
+
+    <div class="catalog-grid">
+      <div class="catalog-item">
+        <h3>Работа на Wildberries</h3>
+        <p>Идеи для карточек и визуала.</p>
+        <button class="open-modal" data-modal="m-wb">Открыть подтему</button>
+      </div>
+
+      <div class="catalog-item">
+        <h3>Делать сайты</h3>
+        <p>Шутливые шаблоны и тексты.</p>
+        <button class="open-modal" data-modal="m-sites">Открыть подтему</button>
+      </div>
+
+      <div class="catalog-item">
+        <h3>Игры: «Чушки»</h3>
+        <p>Мем-идеи и игровые сценарии.</p>
+        <button class="open-modal" data-modal="m-pigs">Открыть подтему</button>
+      </div>
+
+      <div class="catalog-item">
+        <h3>Есть грибы</h3>
+        <p>Юмор про грибные гулянки.</p>
+        <button class="open-modal" data-modal="m-mush">Открыть подтему</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year2"></span> Каталог — демо.</p>
+      <p><a href="index.html">Главная</a> · <a href="contacts.html">Контакты</a></p>
+    </div>
+  </footer>
+
+  <!-- Модалки -->
+  <div id="modals">
+    <div class="modal" id="m-wb" role="dialog" aria-hidden="true" aria-label="Wildberries">
+      <div class="modal-content">
+        <button class="close" aria-label="Закрыть">✕</button>
+        <h3>Работа на Wildberries — «пикать как мышка с ТСД»</h3>
+        <p>Инструкция-шутка: правильно пикать, фотографировать товар и делать карточки с мемными подписями. Для атмосферы — короткое видео про мышку, которая «чекает» штрихкод.</p>
+        <div class="modal-illustration">🐭📦</div>
+      </div>
+    </div>
+
+    <div class="modal" id="m-sites" role="dialog" aria-hidden="true" aria-label="Делать сайты">
+      <div class="modal-content">
+        <button class="close" aria-label="Закрыть">✕</button>
+        <h3>Делать сайты — «верстать на скорости света»</h3>
+        <p>Шаблоны лендинга, советы по текстам и веселые сниппеты кода. Идеально для лендинга-пранка.</p>
+        <div class="modal-illustration">⌨️⚡</div>
+      </div>
+    </div>
+
+    <div class="modal" id="m-pigs" role="dialog" aria-hidden="true" aria-label="Чушки">
+      <div class="modal-content">
+        <button class="close" aria-label="Закрыть">✕</button>
+        <h3>Игры: «Чушки» — «прыгать по карте как суперсвинка»</h3>
+        <p>Идея мини-игры: коллективные состязания, мемы и смешные челленджи. Никакого вреда — только юмор и фейерверки из бекона (в шутку).</p>
+        <div class="modal-illustration">🐷🏁</div>
+      </div>
+    </div>
+
+    <div class="modal" id="m-mush" role="dialog" aria-hidden="true" aria-label="Есть грибы">
+      <div class="modal-content">
+        <button class="close" aria-label="Закрыть">✕</button>
+        <h3>Есть грибы — «находить опята в VR»</h3>
+        <p>Шутливые рецепты и визуальные карточки — идеи оформления для постов и сторис.</p>
+        <div class="modal-illustration">🍄🎨</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- бегущие персонажи контейнер -->
+  <div id="anim-layer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

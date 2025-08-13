@@ -1,0 +1,90 @@
+:root{
+  --bg-1: #021f1c; /* deep turquoise */
+  --bg-2: #07393a;
+  --accent1: #5fe0c4; /* mint */
+  --accent2: #33c4ff; /* aquamarine/blue */
+  --muted: #a7dcd8;
+  --card-bg: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.03);
+}
+
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:var(--muted);background:linear-gradient(180deg,var(--bg-1),var(--bg-2));-webkit-font-smoothing:antialiased}
+a{color:var(--accent1)}
+.container{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:20px}
+
+/* Canvas covers background */
+canvas#fractal{position:fixed;inset:0;z-index:0;width:100%;height:100%;display:block}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:5;background:linear-gradient(180deg, rgba(0,0,0,0.25), transparent);
+  backdrop-filter: blur(6px);
+}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:700;color:var(--accent1);margin:0;font-size:1.1rem}
+
+/* Nav & burger */
+.mainnav{display:flex;gap:12px;align-items:center}
+.mainnav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+.mainnav a.active, .mainnav a:hover{background:var(--glass);color:var(--accent2)}
+.burger{display:none;background:transparent;border:0;color:var(--muted);font-size:1.2rem;padding:8px}
+
+/* Content */
+.main-content{padding-top:28px;padding-bottom:60px}
+.hero{background:linear-gradient(135deg, rgba(95,224,196,0.06), rgba(51,196,255,0.04));padding:22px;border-radius:12px;box-shadow:0 6px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.03)}
+.hero h2{margin:0 0 8px 0;color:var(--accent1)}
+.cta{margin-top:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#022; text-decoration:none;font-weight:700;margin-right:8px;border:0;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+
+/* Cards / grid */
+.features{display:grid;grid-template-columns: repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.card{background:var(--card-bg);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.catalog-item{background:rgba(0,0,0,0.25);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+/* Modal */
+#modals .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;z-index:30;visibility:hidden;opacity:0;transition:opacity .18s, visibility .18s;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.5))}
+#modals .modal[aria-hidden="false"]{visibility:visible;opacity:1}
+.modal-content{background:linear-gradient(180deg, rgba(5,30,28,0.95), rgba(6,40,45,0.98));border-radius:12px;padding:18px;max-width:720px;width:100%;position:relative;border:1px solid rgba(255,255,255,0.04)}
+.modal .close{position:absolute;right:10px;top:8px;background:transparent;border:0;color:var(--muted);font-size:1.1rem;cursor:pointer}
+.modal-illustration{margin-top:10px;font-size:2rem}
+
+/* Footer */
+.site-footer{padding:22px 0;text-align:center;color:var(--muted);position:relative;z-index:2}
+
+/* Animations: running animals */
+#anim-layer{position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;z-index:20;overflow:visible}
+.animal{position:absolute;width:56px;height:56px;will-change:transform;transform-origin:center center}
+.animal svg{width:100%;height:100%;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.35))}
+
+/* mobile optimisations */
+@media (max-width:800px){
+  .mainnav{position:fixed;right:12px;top:56px;background:linear-gradient(180deg, rgba(2,31,30,0.98), rgba(3,40,39,0.98));padding:10px;border-radius:12px;flex-direction:column;display:none}
+  .mainnav.show{display:flex}
+  .burger{display:block}
+  .header-row{align-items:center}
+  .hero{padding:16px}
+  .catalog-grid{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr}
+  .btn{padding:10px 14px}
+  .animal{width:44px;height:44px}
+  .modal-content{margin:12px}
+}
+
+/* small tweaks */
+input, textarea{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted)}
+label{display:block;margin-bottom:8px;font-size:14px;color:var(--muted)}
+.phone-list a{color:var(--accent1);text-decoration:none}
+
+/* subtle pulse for CTA */
+.btn.pulse{
+  animation: pulse 2.6s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.04)}
+  100%{transform:scale(1)}
+}

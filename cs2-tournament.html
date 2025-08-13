@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Турнир CS2 — Запись</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="fractal"></canvas>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <h1 class="logo">Запись на турнир — Counter-Strike 2</h1>
+      <button id="burger" aria-label="Открыть меню" class="burger" aria-expanded="false">☰</button>
+      <nav id="mainnav" class="mainnav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="cs2-tournament.html" class="active">Турнир CS2</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="hero">
+      <h2>Запись на турнир</h2>
+      <p>Призы (шутка): 1 место — <strong>100 сливочных курочек</strong> на Мираже, 2 место — <strong>гугельбугель</strong>.</p>
+    </section>
+
+    <section class="card">
+      <h3>Форма регистрации</h3>
+      <form id="tourney-form" onsubmit="return submitTourney(event)">
+        <label>Имя <input name="name" required /></label>
+        <label>Никнейм <input name="nick" required /></label>
+        <label>Команда <input name="team" /></label>
+        <label>Контакт (телефон или email) <input name="contact" /></label>
+        <button type="submit" class="btn">Записаться</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year4"></span> Турнир — демо.</p>
+      <p><a href="index.html">Главная</a> · <a href="catalog.html">Каталог</a></p>
+    </div>
+  </footer>
+
+  <!-- бегущие персонажи -->
+  <div id="anim-layer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

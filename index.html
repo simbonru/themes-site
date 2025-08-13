@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Темки — Главная</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="fractal"></canvas>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <h1 class="logo">Темки — Хамасович &amp; Крип</h1>
+      <button id="burger" aria-label="Открыть меню" class="burger" aria-expanded="false">☰</button>
+      <nav id="mainnav" class="mainnav">
+        <a href="index.html" class="active">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="cs2-tournament.html">Турнир CS2</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="hero">
+      <h2>Креативные и шуточные темы</h2>
+      <p>Коллекция идей: работа на Wildberries, создание сайтов, игровые мини-темы и кулинарные приколы про грибы — всё в калейдоскопическом стиле.</p>
+      <div class="cta">
+        <a class="btn" href="catalog.html">Открыть каталог</a>
+        <a class="btn ghost" href="contacts.html">Связаться</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <article class="card">
+        <h3>Работа на Wildberries</h3>
+        <p>Формулировки карточек, идеи для фото — «пикать как мышка с ТСД» (шутливо).</p>
+      </article>
+
+      <article class="card">
+        <h3>Делать сайты</h3>
+        <p>Мини-шаблоны и идея лендинга «код на скорости света» — для шутливой витрины.</p>
+      </article>
+
+      <article class="card">
+        <h3>Игры: «Чушки»</h3>
+        <p>Мем-игры и веселые сценарии — «прыгать по карте как суперсвинка» (юмор).</p>
+      </article>
+
+      <article class="card">
+        <h3>Есть грибы</h3>
+        <p>Юмористические рецепты и карточки с грибной тематикой.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Темки — локальная демо-версия.</p>
+      <p><a href="contacts.html">Контакты</a></p>
+    </div>
+  </footer>
+
+  <!-- бегущие персонажи контейнер -->
+  <div id="anim-layer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

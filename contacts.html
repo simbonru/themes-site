@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Контакты</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="fractal"></canvas>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <h1 class="logo">Контакты</h1>
+      <button id="burger" aria-label="Открыть меню" class="burger" aria-expanded="false">☰</button>
+      <nav id="mainnav" class="mainnav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="cs2-tournament.html">Турнир CS2</a>
+        <a href="contacts.html" class="active">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content contacts-page">
+    <h2>Связаться</h2>
+    <p>Телефоны (нажми, чтобы позвонить):</p>
+    <ul class="phone-list">
+      <li><strong>Павел Крип</strong> — <a href="tel:+79084676785">+7 908 467 6785</a></li>
+      <li><strong>Максим Сасович</strong> — <a href="tel:+79531250450">+7 953 125 0450</a></li>
+    </ul>
+
+    <p>Если нужно — оставь сообщение (локально):</p>
+    <form onsubmit="alert('Демо: сообщение не отправляется — это локальная версия.'); return false;">
+      <label>
+        Твоё имя
+        <input type="text" name="name" />
+      </label>
+      <label>
+        Сообщение
+        <textarea name="msg"></textarea>
+      </label>
+      <button type="submit" class="btn">Отправить (демо)</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year3"></span> Контакты.</p>
+      <p><a href="index.html">Главная</a> · <a href="catalog.html">Каталог</a></p>
+    </div>
+  </footer>
+
+  <!-- бегущие персонажи контейнер -->
+  <div id="anim-layer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
